@@ -1,4 +1,4 @@
-### For simple Chat App using Socket.io
+### For simple Chat App using Socket.io 
 
 #####   Go To simple-chat directory and run this command
 
