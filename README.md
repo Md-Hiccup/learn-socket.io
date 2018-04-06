@@ -12,5 +12,5 @@
 
 #####   In socketPoint directory,
 
--   cd basic ( cd broadcast or cd chatApp )
+-   cd basic ( or cd broadcast or cd chatApp )
 -   node app.js
