@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Socket App</title>
+    </head>
+    
+    <body>
+        <p>Hello World</p>
+
+        <script src = "/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.emit('clientEvent', 'Event from the client');
+            // socket.on('message', function(data){    document.write(data);   });
+            socket.on('testerEvent', function(data){   document.write(data.description);    });
+        </script>
+    </body>
+</html>

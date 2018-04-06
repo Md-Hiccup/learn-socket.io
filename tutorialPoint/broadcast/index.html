@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello world</title>
+   </head>
+   <body>
+       <p>Hello World</p>
+   
+    <script src = "/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    //   socket.on('broadcast',function(data) {
+      socket.on('newclientconnect',function(data) {         
+        document.body.innerHTML = '';
+        document.write(data.description);
+      });
+      
+      /************ Namespace ********/
+    //   var socketNsp = io('/my-custom')
+    //   socketNsp.on('hi', function(data){
+    //       document.innerHTML = '';
+    //       document.write(data);
+    //   });
+    </script>
+    </body>
+</html>
