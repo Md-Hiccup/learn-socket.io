@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Socket.io</title>
+</head>
+
+<body>
+    <h1>Communicating with socket.io!</h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        // let's assume that the client page, once rendered, knows what room it wants to join
+        var room = "abc123";
+        
+        // socket.on('connect', function () {
+        //     socket.emit('room', room);
+        //     console.log('connect client to socket')
+        //     // Connected, let's sign-up for to receive messages for this room
+        // });
+        
+        socket.emit('room', room);
+        
+        socket.on('message', function (data) {
+            console.log('Incoming message:', data);
+            // alert('msg: ', data);
+            document.body.innerHTML = '';
+            document.write(data);
+        });
+    </script>
+</body>
+
+</html>

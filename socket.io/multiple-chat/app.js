@@ -12,7 +12,7 @@ var server = http.createServer(function(req, res) {
 // Loading socket.io
 var io = require('socket.io').listen(server);
 
-io.sockets.on('connection', function (socket, username) {
+io.on('connection', function (socket, username) {
     // When the client connects, they are sent a message
     socket.emit('message', 'You are connected!');
     // The other clients are told that someone new has arrived
@@ -26,7 +26,7 @@ io.sockets.on('connection', function (socket, username) {
     // When a "message" is received (click on the button), it's logged in the console
     socket.on('message', function (message) {
         // The username of the person who clicked is retrieved from the session variables
-        console.log(socket.username + ' is speaking to me! They\'re saying: ' + message);
+        console.log(socket.username + ' : ' + message);
     }); 
 });
 

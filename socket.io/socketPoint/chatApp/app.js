@@ -15,6 +15,7 @@ io.on('connection', function (socket) {
     socket.on('setUsername', function (data) {
         console.log(data);
         if (users.indexOf(data) > -1) {
+            // console.log(users);
             socket.emit('userExists', data + ' username is already taken. Try some other username.');
         } else {
             users.push(data);
